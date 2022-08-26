@@ -10,6 +10,7 @@ const POLYGON_INFURA_ENDPOINT = process.env.POLYGON_INFURA_ENDPOINT;
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY;
 const PRIVATE_KEY1 = process.env.PRIVATE_KEY1;
 const PRIVATE_KEY2 = process.env.PRIVATE_KEY2;
+const GAS_REPORTER_KEY = process.env.GAS_REPORTER_KEY;
 
 module.exports = {
   defaultNetwork: "localhost",
@@ -47,8 +48,8 @@ module.exports = {
     },
   },
   etherscan: {
-    apiKey: { rinkeby: "6DRPTECRXH8AQI3GZKB65T3WPYWXCRHTTG",
-              mainnet: "6DRPTECRXH8AQI3GZKB65T3WPYWXCRHTTG" }
+    apiKey: { rinkeby: ETHERSCAN_API_KEY,
+              mainnet: ETHERSCAN_API_KEY }
   },
   paths: {
     sources: "./contracts",
@@ -62,7 +63,7 @@ module.exports = {
   gasReporter: {
     currency: "usd",
     gasPrice: 50,
-    coinmarketcap: "1ecfa6fd-b2de-42e2-8ffd-4a2914c358b0",
+    coinmarketcap: GAS_REPORTER_KEY,
   },
 };
 
