@@ -6,18 +6,23 @@
 const hre = require("hardhat");
 
 async function main() {
-  // constructor args
-  // string memory _nonRevealedBaseURI, 
-  // uint256[18] memory shares, 
-  // address[18] memory wallets,
-  // address[15] memory freeMintAddresses,
-  // uint256[15] memory freeMintAmounts
 
   const Sprite = await hre.ethers.getContractFactory("Sprite");
   sprite = await Sprite.deploy();
   
   await sprite.deployed();
-  console.log(apex.address);
+  console.log(sprite.address);
+
+  await new Promise((resolve) => setTimeout(resolve, 60000));
+  try {
+    await hre.run("verify:verify", {
+      address: sprite.address,
+      constructorArguments: [],
+    });
+    console.log("verified");
+  } catch (e) {
+    console.log(e);
+  }
 }
 
 // We recommend this pattern to be able to use async/await everywhere

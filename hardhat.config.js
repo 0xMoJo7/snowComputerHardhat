@@ -8,9 +8,10 @@ const RINKEBY_INFURA_ENDPOINT = process.env.RINKEBY_INFURA_ENDPOINT;
 const MAINNET_INFURA_ENDPOINT = process.env.MAINNET_INFURA_ENDPOINT;
 const POLYGON_INFURA_ENDPOINT = process.env.POLYGON_INFURA_ENDPOINT;
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY;
+const POLYGONSCAN_API_KEY = process.env.POLYGONSCAN_API_KEY;
+const GAS_REPORTER_KEY = process.env.GAS_REPORTER_KEY;
 const PRIVATE_KEY1 = process.env.PRIVATE_KEY1;
 const PRIVATE_KEY2 = process.env.PRIVATE_KEY2;
-const GAS_REPORTER_KEY = process.env.GAS_REPORTER_KEY;
 
 module.exports = {
   defaultNetwork: "localhost",
@@ -49,7 +50,8 @@ module.exports = {
   },
   etherscan: {
     apiKey: { rinkeby: ETHERSCAN_API_KEY,
-              mainnet: ETHERSCAN_API_KEY }
+              mainnet: ETHERSCAN_API_KEY,
+              polygon: POLYGONSCAN_API_KEY }
   },
   paths: {
     sources: "./contracts",
