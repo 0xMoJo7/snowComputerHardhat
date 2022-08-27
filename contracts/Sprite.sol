@@ -17,11 +17,11 @@ contract Sprite is ISnowV1Program {
     {
         uint256[5] memory sprites = [
             // Sprites created with https://snow.computer/operators
-            0xaaaa5555aaaa5555aaaa5555aaaa5555aaaa5555aaaa5555aaaa5555aaaa5555,
-            0xbfffa701a5f9a409a40997c9904db785a465a4f5a795a015a005bffd8001ffff,
-            0x09e033034206c418082008411081230a44108401002218841199632346648848,
-            0x0000000000000000000000000000000001800180000000000000000000000000,
-            0xffff80018001800180018001800180018181818180018001800180018001ffff
+            0xffff8139bd45bd6dbd6dbf6dbf6dbf6dbf6db16db16dbd6dbd6dbd6d816dffff,
+            0x00007ec642ba4292429240924092409240924e924e924292429242927e920000,
+            0xffff8139bd45bd6dbd6dbf6dbf6dbf6dbf6db16db16dbd6dbd6dbd6d816dffff,
+            0x00007ec642ba4292429240924092409240924e924e924292429242927e920000,
+            0xffff8139bd45bd6dbd6dbf6dbf6dbf6dbf6db16db16dbd6dbd6dbd6d816dffff
         ];
 
         spriteIndex = (spriteIndex + 1) % 5;
