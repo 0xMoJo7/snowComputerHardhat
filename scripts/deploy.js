@@ -13,7 +13,7 @@ async function main() {
   await sprite.deployed();
   console.log(sprite.address);
 
-  await new Promise((resolve) => setTimeout(resolve, 60000));
+  await new Promise((resolve) => setTimeout(resolve, 15000));
   try {
     await hre.run("verify:verify", {
       address: sprite.address,
