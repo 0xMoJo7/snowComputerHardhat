@@ -1,17 +1,10 @@
 require("@nomiclabs/hardhat-waffle");
 require("dotenv").config({ path: ".env" });
 require("@nomiclabs/hardhat-etherscan");
-require("hardhat-gas-reporter");
 
-const KOVAN_INFURA_ENDPOINT = process.env.KOVAN_INFURA_ENDPOINT;
-const RINKEBY_INFURA_ENDPOINT = process.env.RINKEBY_INFURA_ENDPOINT;
-const MAINNET_INFURA_ENDPOINT = process.env.MAINNET_INFURA_ENDPOINT;
 const POLYGON_INFURA_ENDPOINT = process.env.POLYGON_INFURA_ENDPOINT;
-const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY;
 const POLYGONSCAN_API_KEY = process.env.POLYGONSCAN_API_KEY;
-const GAS_REPORTER_KEY = process.env.GAS_REPORTER_KEY;
 const PRIVATE_KEY1 = process.env.PRIVATE_KEY1;
-const PRIVATE_KEY2 = process.env.PRIVATE_KEY2;
 
 module.exports = {
   defaultNetwork: "localhost",
@@ -19,23 +12,9 @@ module.exports = {
     localhost: {
       url: "http://127.0.0.1:8545",
     },
-    kovan: {
-      url: KOVAN_INFURA_ENDPOINT,
-      accounts: [PRIVATE_KEY1, PRIVATE_KEY2],
-    },
-    rinkeby: {
-      url: RINKEBY_INFURA_ENDPOINT,
-      accounts: [PRIVATE_KEY1, PRIVATE_KEY2],
-      gas: "auto",
-    },
-    mainnet: {
-      url: MAINNET_INFURA_ENDPOINT,
-      accounts: [PRIVATE_KEY1, PRIVATE_KEY2],
-      gas: "auto",
-    },
     polygon: {
       url: POLYGON_INFURA_ENDPOINT,
-      accounts: [PRIVATE_KEY1, PRIVATE_KEY2],
+      accounts: [PRIVATE_KEY1],
       gas: "auto",
     },
   },
@@ -49,9 +28,7 @@ module.exports = {
     },
   },
   etherscan: {
-    apiKey: { rinkeby: ETHERSCAN_API_KEY,
-              mainnet: ETHERSCAN_API_KEY,
-              polygon: POLYGONSCAN_API_KEY }
+    apiKey: { polygon: POLYGONSCAN_API_KEY }
   },
   paths: {
     sources: "./contracts",
@@ -62,10 +39,4 @@ module.exports = {
   mocha: {
     timeout: 2000000,
   },
-  gasReporter: {
-    currency: "usd",
-    gasPrice: 50,
-    coinmarketcap: GAS_REPORTER_KEY,
-  },
 };
-
