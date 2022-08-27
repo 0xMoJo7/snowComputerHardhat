@@ -32,3 +32,6 @@ POLYGONSCAN_API_KEY="<your-polygonscan-api-key>"
 
 ### Deploy Command
 `npx hardhat run scripts/deploy.js --network polygon`
+
+### Foundry Example
+https://github.com/karmacoma-eth/snow-operator-template
