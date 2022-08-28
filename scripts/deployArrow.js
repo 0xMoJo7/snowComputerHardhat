@@ -7,16 +7,16 @@ const hre = require("hardhat");
 
 async function main() {
 
-  const Sprite = await hre.ethers.getContractFactory("Sprite");
-  sprite = await Sprite.deploy();
+  const Arrow = await hre.ethers.getContractFactory("Arrow");
+  arrow = await Arrow.deploy();
   
-  await sprite.deployed();
-  console.log(sprite.address);
+  await arrow.deployed();
+  console.log(arrow.address);
 
-  await new Promise((resolve) => setTimeout(resolve, 15000));
+  await new Promise((resolve) => setTimeout(resolve, 30000));
   try {
     await hre.run("verify:verify", {
-      address: sprite.address,
+      address: arrow.address,
       constructorArguments: [],
     });
     console.log("verified");
