@@ -10,7 +10,7 @@ The Snow computer is deployed at [0xF53D926c13Af77C53AFAe6B33480DDd94B167610](ht
 - `tick` is called every 5 min, which runs every program with a 50k gas stipend and updates the art.
 
 ### Examples:
-* `Arrow`, found in `contracts/Arrow.sol` in this repo. Which creates a diagonal arrow across 3 selected points on the canvas, also shows and example of reversing a piece of art.
+* `Arrow`, found in `contracts/Arrow.sol` in this repo. Which creates a diagonal arrow across 3 selected canvases on the larger canvas, also shows and example of reversing a piece of art.
 * `Sprite`, found in `contracts/Sprites.sol` in this repo. Which psuedo-randomly selects a spot on the canvas and fills with one of the "Sprites"
 * `Chaos` and `Invertor` [gist](https://gist.github.com/w1nt3r-eth/eac0d0a4ae1fb8795f031ca580a40717)
 * `Oighty` at [0x476920b3cf1B893F641745cDc8D30DfF55DD0920](https://polygonscan.com/address/0x476920b3cf1B893F641745cDc8D30DfF55DD0920#code)
