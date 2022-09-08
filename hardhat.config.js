@@ -1,9 +1,13 @@
+const { providers } = require("ethers");
+
 require("@nomiclabs/hardhat-waffle");
 require("dotenv").config({ path: ".env" });
 require("@nomiclabs/hardhat-etherscan");
 
 const POLYGON_INFURA_ENDPOINT = process.env.POLYGON_INFURA_ENDPOINT;
+const GOERLI_INFURA_ENDPOINT = process.env.GOERLI_INFURA_ENDPOINT;
 const POLYGONSCAN_API_KEY = process.env.POLYGONSCAN_API_KEY;
+const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY;
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
 
 module.exports = {
@@ -11,6 +15,11 @@ module.exports = {
   networks: {
     localhost: {
       url: "http://127.0.0.1:8545",
+    },
+    goerli: {
+      url: GOERLI_INFURA_ENDPOINT,
+      accounts: [PRIVATE_KEY],
+      gas: "auto",
     },
     polygon: {
       url: POLYGON_INFURA_ENDPOINT,
@@ -28,7 +37,8 @@ module.exports = {
     },
   },
   etherscan: {
-    apiKey: { polygon: POLYGONSCAN_API_KEY }
+    apiKey: { polygon: POLYGONSCAN_API_KEY,
+              goerli: ETHERSCAN_API_KEY }
   },
   paths: {
     sources: "./contracts",
